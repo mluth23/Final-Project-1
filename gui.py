@@ -76,10 +76,6 @@ class gui:
         self.label_display.pack(anchor='w', side='bottom')
         self.frame_display.pack(anchor='w', pady=10)
 
-        # clear button
-        self.button_clear = Button(self.window, text='CLEAR', command=self.clear)
-        self.button_clear.pack(side='bottom', pady=10)
-
         # Save button
         self.button_save = Button(self.window, text='CALCULATE', command=self.clicked)
         self.button_save.pack(side='bottom', pady=10)
@@ -194,27 +190,6 @@ class gui:
         :return: a string of the name
         """
         return self.entry_name.get()
-
-    def clear(self) -> None:
-        """
-        Function to clear GUI
-        """
-        self.entry_name.forget()
-        self.entry_score_1.forget()
-        self.entry_score_2.forget()
-        self.entry_score_3.forget()
-        self.entry_score_4.forget()
-        self.label_display.destroy()
-        self.entry_name.delete(0, END)
-        self.entry_score_1.delete(0, END)
-        self.entry_score_2.delete(0, END)
-        self.entry_score_3.delete(0, END)
-        self.entry_score_4.delete(0, END)
-        self.label_name.config(text='')
-        self.label_score_1.config(text='')
-        self.label_score_2.config(text='')
-        self.label_score_3.config(text='')
-        self.label_score_4.config(text='')
 
     def clicked(self) -> None:
         """
